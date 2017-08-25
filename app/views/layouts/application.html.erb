@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <a class="logo_container" href="<%=bands_url%>">
+        <img class="music_logo" href="<%=bands_url%>" src="/assets/music_app_logo.png">
+    </a>
+    <h1>Off the Wall Music</h1>
+      <nav>
+        <% if logged_in? %>
+          Hi, <%= current_user.email %>
+          <%= button_to "Log Out", session_url, method: :delete %>
+        <% else %>
+        <ul>
+          <li><%= link_to "Create Account", new_user_url %></li>
+          <li><%= link_to "Sign In", new_session_url %></li>
+        <% end %>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

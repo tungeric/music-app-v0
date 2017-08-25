@@ -1,0 +1,6 @@
+<h2>Discography</h2>
+<ul class="album-list">
+  <% @band.albums.each do |album| %>
+  <li><a href="<%=album_url %>"><%= album.title %></a></li>
+<% end %>
+</ul>

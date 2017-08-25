@@ -1,0 +1,6 @@
+<h1><%= @band.name %></h1>
+
+<%= render 'form_show_new' %>
+<input type="hidden" name="album[band_id]" value="<%=@band.id%>">
+<% flash[:band] = @band %>
+<li><%= link_to "Add Album", new_album_url %></li>

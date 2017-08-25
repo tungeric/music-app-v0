@@ -1,0 +1,31 @@
+// Place all the styles related to the Bands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.band_section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.band_container {
+  display: block;
+  width: 200px;
+  height: 200px;
+  padding: 50px;
+  color: white;
+  background-color: blue;
+  margin: 20px;
+}
+
+.band_container:last-child {
+  background-color: gray;
+}
+
+.band_container:hover {
+  width: 210px;
+  height: 210px;
+  font-size: 16px;
+  font-weight: bold;
+  background: url(mj_dance.webp)
+}

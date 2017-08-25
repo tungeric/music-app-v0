@@ -1,0 +1,9 @@
+<section class="band_section">
+  <%= stylesheet_link_tag 'bands' %>
+<% @bands.each do |band| %>
+  <a class="band_container" href="<%=band_url(band)%>">
+    <%= band.name %>
+  </a>
+<% end %>
+<a class="band_container" href="<%=new_band_url%>">Add a band</a>
+</section>
