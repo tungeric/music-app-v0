@@ -16,12 +16,18 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(band_params)
+    @track = Track.new(track_params)
     if @track.save
       redirect_to band_url(@band)
     else
       flash.now[:errors] = @band.errors.full_messages
       render :new
     end
+  end
+
+  private
+
+  def track_params
+    params.require(:track).permit(:name, :bonus, :album_id, :ord)
   end
 end

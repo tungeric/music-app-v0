@@ -1,0 +1,41 @@
+<br>Add a Track</h1>
+
+<%= render 'shared/errors' %>
+
+<form class="" action=" <%= tracks_url %> " method="post">
+  <label for="track_name">Track Name: </label>
+  <input type="text" id="track_name" name="track[name]" value="">
+  <br><br>
+  <label for="track_order">Year: </label>
+  <input type="text" id="album_year" name="album[year]" value="">
+  <br><br>
+  <label for="album_band">Band Name: </label>
+  <select id='album-band' name="album[band_id]">
+        <option disabled selected>- Select Band Name -</option>
+        <% Band.all.each do |band| %>
+            <option
+                <%= "selected" if band.id == @band.first.last %>
+                value="<%= band.id %>">
+                <%= band.name %>
+            </option>
+        <% end %>
+    </select>
+  <br><br>
+
+  <input
+    type="radio"
+    name="album[live]"
+    value=1
+    id="album_live"
+    <%= @album.live ? "checked" : "" %>>
+  <label for="album_live">Live</label>
+  <input
+    type="radio"
+    name="album[live]"
+    value=0
+    id="album_live"
+    <%= @album.live ? "" : "checked" %>>
+  <label for="album_studio">Studio</label>
+  <input type="submit">
+
+</form>

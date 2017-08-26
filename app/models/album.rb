@@ -21,6 +21,6 @@ class Album < ApplicationRecord
 
   has_many :tracks,
     primary_key: :id,
-    foreign_key: :band_id,
+    foreign_key: :album_id,
     class_name: :Track
 end
